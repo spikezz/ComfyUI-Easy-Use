@@ -232,14 +232,11 @@ class PixArtMS(PixArt):
             ).repeat(bs, 1)
         else:
             data_info["img_hw"] = img_hw.to(dtype=x.dtype, device=x.device)
-        if aspect_ratio is None or True:
-            data_info["aspect_ratio"] = torch.tensor(
-                [[x.shape[2]/x.shape[3]]],
-                dtype=self.dtype,
-                device=x.device
-            ).repeat(bs, 1)
-        else:
-            data_info["aspect_ratio"] = aspect_ratio.to(dtype=x.dtype, device=x.device)
+        data_info["aspect_ratio"] = torch.tensor(
+            [[x.shape[2]/x.shape[3]]],
+            dtype=self.dtype,
+            device=x.device
+        ).repeat(bs, 1)
 
         ## Still accepts the input w/o that dim but returns garbage
         if len(context.shape) == 3:

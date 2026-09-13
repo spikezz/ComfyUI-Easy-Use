@@ -34,7 +34,6 @@ def cleanGPU(request):
         return web.Response(status=200)
     except Exception as e:
         return web.Response(status=500)
-        pass
 
 @PromptServer.instance.routes.post("/easyuse/removecache")
 async def removecache(request):
@@ -45,7 +44,6 @@ async def removecache(request):
         return web.Response(status=200)
     except Exception as e:
         return web.Response(status=500)
-        pass
 
 @PromptServer.instance.routes.post("/easyuse/translate")
 async def translate(request):

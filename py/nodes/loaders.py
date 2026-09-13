@@ -917,8 +917,6 @@ class kolorsLoader:
                 "result": (pipe, model, vae, chatglm3_model, positive_embeddings_final, negative_embeddings_final, samples)}
 
 
-        return (chatglm3_model, None, None)
-
 # Flux Loader
 class fluxLoader(fullLoader):
     @classmethod
